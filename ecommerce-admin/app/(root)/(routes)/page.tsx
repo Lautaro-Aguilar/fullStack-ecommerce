@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useStoreModal } from '@/hooks/use-store-modal';
-import { Modal } from '@/components/ui/modal';
-import { useEffect } from 'react';
+import { useStoreModal } from "@/hooks/use-store-modal";
+import { Modal } from "@/components/ui/modal";
+import { useEffect } from "react";
 
 export default function SetupPage() {
   const onOpen = useStoreModal((state) => state.onOpen);
@@ -13,5 +13,5 @@ export default function SetupPage() {
       onOpen();
     }
   }, [isOpen, onOpen]);
-  return <div className='p-4'>Root Page</div>;
+  return null;
 }
