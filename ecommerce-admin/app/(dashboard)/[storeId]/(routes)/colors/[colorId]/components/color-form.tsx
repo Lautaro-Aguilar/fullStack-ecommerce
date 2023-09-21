@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { AlertModal } from "@/components/modals/alert-modal";
+import { GradientPicker } from "@/components/ui/gradient-picker";
 
 const formSchema = zod.object({
   name: zod.string().min(1),
@@ -42,6 +43,7 @@ export const ColorForm: React.FC<ColorFormProps> = ({ initialData }) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [background, setBackground] = useState("");
 
   const title = initialData ? "Edit color" : "Create color";
   const description = initialData ? "Edit a color" : "Add a new color";
@@ -145,14 +147,9 @@ export const ColorForm: React.FC<ColorFormProps> = ({ initialData }) => {
                   <FormLabel>Value</FormLabel>
                   <FormControl>
                     <div className="flex items-center gap-x-4">
-                      <Input
-                        disabled={loading}
-                        placeholder="Color value"
-                        {...field}
-                      />
-                      <div
-                        className="border p-4 rounded-full"
-                        style={{ backgroundColor: field.value }}
+                      <GradientPicker
+                        value={field.value ?? ""}
+                        onChange={(value) => field.onChange(value)}
                       />
                     </div>
                   </FormControl>
