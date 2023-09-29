@@ -32,14 +32,14 @@ const Summary = () => {
   }, 0);
 
   const onCheckout = async () => {
-    const reponse = await axios.post(
+    const response = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
       {
-        productsIds: items.map((item) => item.id),
+        productIds: items.map((item) => item.id),
       }
     );
 
-    window.location = reponse.data.url;
+    window.location = response.data.url;
   };
   return (
     <div className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
