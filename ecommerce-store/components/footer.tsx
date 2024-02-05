@@ -3,7 +3,8 @@ const Footer = () => {
     <div className="bg-white border-t">
       <div className="mx-auto py-10">
         <div className="text-center text-xs text-black">
-          &copy; 2023 FakeStoreName, Inc. All rights reserved.
+          &copy; {new Date().getFullYear()} Lautaro Exequiel Aguilar, Inc. All
+          rights reserved.
         </div>
       </div>
     </div>
